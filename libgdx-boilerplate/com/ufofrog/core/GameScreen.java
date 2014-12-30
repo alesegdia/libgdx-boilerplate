@@ -25,8 +25,6 @@ public abstract class GameScreen implements Screen {
 	private OrthographicCamera _camera;
 	private SpriteBatch _batch;
 	private ShapeRenderer _shaperenderer;
-	private ButtonManager _buttonmanager;
-
 
 	public GameScreen(GdxGame game, float viewportWidth, float viewportHeight) {
 
@@ -35,7 +33,6 @@ public abstract class GameScreen implements Screen {
 
 		this._camera = new OrthographicCamera(viewportWidth, viewportHeight);
 		this._batch = new SpriteBatch();
-		this._buttonmanager = new ButtonManager();
 		
 		// set camera en Input en vez de pasar la camara en el update
 		
@@ -47,16 +44,11 @@ public abstract class GameScreen implements Screen {
 		
 	}
 	
-	protected void AddButton( Button txtbt )
-	{
-		this._buttonmanager.AddButton(txtbt);
-	}
 	
 	@Override
 	public void render( float delta )
 	{
 		Input.Update( );
-		_buttonmanager.Update();
 		
 		Update( delta );
 		
@@ -66,7 +58,6 @@ public abstract class GameScreen implements Screen {
 		_batch.setProjectionMatrix(_camera.combined);
 		_batch.begin();
 		Render( _batch );
-		_buttonmanager.Render( _batch );
 		_batch.end();
 		
 		if( game.debugrender )
@@ -74,7 +65,6 @@ public abstract class GameScreen implements Screen {
 			_shaperenderer.setProjectionMatrix(_camera.combined);
 			_shaperenderer.begin(ShapeType.Line);
 			DebugRender( _shaperenderer );
-			_buttonmanager.DebugRender( _shaperenderer );
 			_shaperenderer.end();
 		}
 	}
