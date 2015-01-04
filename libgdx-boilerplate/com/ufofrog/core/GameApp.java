@@ -39,10 +39,15 @@ public abstract class GameApp extends Game implements ApplicationListener, Gestu
 		
 	}
 
+	public void ScreenChange( GameScreen to )
+	{
+		
+	}
+	
 	public void setScreen( GameScreen gs )
 	{
+		ScreenChange(gs);
 		setScreen( ((Screen)gs) );
-		Input.SetCamera( gs.GetCam() );
 		gs.Reset();
 	}
 }

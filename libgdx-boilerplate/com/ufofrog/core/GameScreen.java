@@ -23,19 +23,10 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 	
 	final protected GameClass game;
 	
-	private OrthographicCamera _camera;
-	private SpriteBatch _batch;
-	private ShapeRenderer _shaperenderer;
-	private boolean _debugrender = false;
 
 	public GameScreen(GameClass game, float viewportWidth, float viewportHeight) {
 
 		this.game = game;
-		this._shaperenderer = new ShapeRenderer();
-
-		this._camera = new OrthographicCamera(viewportWidth, viewportHeight);
-		this._batch = new SpriteBatch();
-		
 		// set camera en Input en vez de pasar la camara en el update
 		
 	}
@@ -50,40 +41,7 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 	@Override
 	public void render( float delta )
 	{
-		Input.Update( );
-		
-		Update( delta );
-		
-		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-		_batch.setProjectionMatrix(_camera.combined);
-		_batch.begin();
-		Render( _batch );
-		_batch.end();
-		
-		if( _debugrender )
-		{
-			_shaperenderer.setProjectionMatrix(_camera.combined);
-			_shaperenderer.begin(ShapeType.Line);
-			DebugRender( _shaperenderer );
-			_shaperenderer.end();
-		}
-	}
-
-	public void Update(float delta) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void DebugRender(ShapeRenderer shaperenderer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void Render(SpriteBatch batch) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -118,13 +76,8 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 
 	@Override
 	public void dispose() {
-		_batch.dispose();
-		_shaperenderer.dispose();
 	}
 
-	public Camera GetCam() {
-		return _camera;
-	}
 	
 
 }
