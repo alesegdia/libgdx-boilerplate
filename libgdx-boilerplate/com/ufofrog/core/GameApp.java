@@ -25,11 +25,11 @@ public abstract class GameApp extends Game implements ApplicationListener, Gestu
 	@Override
 	public void create() {
 
+		GestureDetector gd = new GestureDetector(this);
+		Gdx.input.setInputProcessor(gd);
 
 		Create();
 		
-		GestureDetector gd = new GestureDetector(this);
-		Gdx.input.setInputProcessor(gd);
 	}
 	
 	protected void Create() {

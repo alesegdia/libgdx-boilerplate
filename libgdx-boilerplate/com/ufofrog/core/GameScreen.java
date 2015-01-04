@@ -31,7 +31,7 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 	@Override
 	public void render( float delta )
 	{
-		System.out.println("asdasdasd");
+
 	}
 
 	@Override
