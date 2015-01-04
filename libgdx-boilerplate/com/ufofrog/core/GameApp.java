@@ -5,8 +5,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.input.GestureDetector.GestureListener;
-import com.ufofrog.cardieman.asset.Loader;
-import com.ufofrog.cardieman.game.Input;
 import com.ufofrog.core.ActionResolver;
 import com.ufofrog.core.GameScreen;
 /**
@@ -27,7 +25,6 @@ public abstract class GameApp extends Game implements ApplicationListener, Gestu
 	@Override
 	public void create() {
 
-		Loader.Init();
 
 		Create();
 		

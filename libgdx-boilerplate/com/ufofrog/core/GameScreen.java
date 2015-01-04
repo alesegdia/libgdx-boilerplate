@@ -1,18 +1,8 @@
 package com.ufofrog.core;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.GL10;
-import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
-import com.ufofrog.cardieman.game.GdxGame;
-import com.ufofrog.cardieman.game.Input;
-import com.ufofrog.cardieman.model.button.Button;
-import com.ufofrog.cardieman.model.button.ButtonManager;
+
 /**
  * @author Alejandro Segu� D�az
  */
