@@ -14,7 +14,7 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 	final protected GameClass game;
 	
 
-	public GameScreen(GameClass game, float viewportWidth, float viewportHeight) {
+	public GameScreen(GameClass game) {
 
 		this.game = game;
 		// set camera en Input en vez de pasar la camara en el update
@@ -31,7 +31,7 @@ public abstract class GameScreen<GameClass extends Game> implements Screen {
 	@Override
 	public void render( float delta )
 	{
-
+		System.out.println("asdasdasd");
 	}
 
 	@Override
