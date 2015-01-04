@@ -1,5 +1,6 @@
 package com.ufofrog.core;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Camera;
@@ -18,15 +19,16 @@ import com.ufofrog.core.Input;
 
 // generics para acceder a las demás screens
 // en nuestra clase game propia desde las heredadas
-public abstract class GameScreen implements Screen {
+public abstract class GameScreen<GameClass extends Game> implements Screen {
 	
-	final protected GdxGame game;
+	final protected GameClass game;
 	
 	private OrthographicCamera _camera;
 	private SpriteBatch _batch;
 	private ShapeRenderer _shaperenderer;
+	private boolean _debugrender = false;
 
-	public GameScreen(GdxGame game, float viewportWidth, float viewportHeight) {
+	public GameScreen(GameClass game, float viewportWidth, float viewportHeight) {
 
 		this.game = game;
 		this._shaperenderer = new ShapeRenderer();
@@ -60,7 +62,7 @@ public abstract class GameScreen implements Screen {
 		Render( _batch );
 		_batch.end();
 		
-		if( game.debugrender )
+		if( _debugrender )
 		{
 			_shaperenderer.setProjectionMatrix(_camera.combined);
 			_shaperenderer.begin(ShapeType.Line);
